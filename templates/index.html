@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"></meta>
+    <title>MarSav map's Tasador</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/index.css')}}">
+</head>
+
+
+<div class="banner"></div> 
+<header><h1>Tasador de Propiedades</h1>
+Complete los datos de una propiedad para obtener una tasación online al instante.
+<br>Tipo de operación: Venta.
+<br>Moneda: US$ (dolares americanos).
+<br>Región: Área metropolitana de Buenos Aires.<hr>
+</header>  
+
+  <form method="POST" enctype="multipart/form-data">
+      
+      <h3>1. Tipo de propiedad:<span class="required">*</span></h3>
+        <p><select name="tipo" required>
+          <option value="vacio"></option>
+          <option value="casa">Casa</option>
+          <option value="departamento">Departamento</option>
+          <option value="ph">PH</option>
+        </select></p>
+
+      <h3>2. Dirección:<span class="required">*</span></h3>
+      <p>
+        <input type="text" name="calle" placeholder="Calle" required/></input>
+        <input type="text" name="altura" placeholder="Número" required/></input>
+      </p>
+        
+          <p>Ciudad:
+          <select name="ciudad" required>
+           <option value="ciudad"></option>
+            <option value="capfed">Capital Federal</option>
+            <option value="norte">Buenos Aires Zona Norte</option>
+            <option value="sur">Buenos Aires Zona Sur</option>
+            <option value="oeste">Buenos Aires Zona Oeste</option>
+          </select></p>
+          <p>Barrio:
+          <select name="barrio" required>
+            <option value="barrio"></option>
+            <option value="Abasto">Abasto</option>
+            <option value="Agronomía">Agronomía</option>
+            <option value="Almagro">Almagro</option>
+            <option value="Almirante Brown">Almirante Brown</option>
+            <option value="Avellaneda">Avellaneda</option>
+            <option value="Balvanera">Balvanera</option>
+            <option value="Barracas">Barracas</option>
+            <option value="Barrio Norte">Barrio Norte</option>
+            <option value="Belgrano">Belgrano</option>
+            <option value="Berazategui">Berazategui</option>
+            <option value="Boca">Boca</option>
+            <option value="Boedo">Boedo</option>
+            <option value="Caballito">Caballito</option>
+            <option value="Catalinas">Catalinas</option>
+            <option value="Cañuelas">Cañuelas</option>
+            <option value="Centro / Microcentro">Centro / Microcentro</option>
+            <option value="Chacarita">Chacarita</option>
+            <option value="Coghlan">Coghlan</option>
+            <option value="Colegiales">Colegiales</option>
+            <option value="Congreso">Congreso</option>
+            <option value="Constitución">Constitución</option>
+            <option value="Escobar">Escobar</option>
+            <option value="Esteban Echeverría">Esteban Echeverría</option>
+            <option value="Ezeiza">Ezeiza</option>
+            <option value="Florencio Varela">Florencio Varela</option>
+            <option value="Flores">Flores</option>
+            <option value="Floresta">Floresta</option>
+            <option value="General Rodríguez">General Rodríguez</option>
+            <option value="General San Martín">General San Martín</option>
+            <option value="Hurlingham">Hurlingham</option>
+            <option value="Ituzaingó">Ituzaingó</option>
+            <option value="José C Paz">José C Paz</option>
+            <option value="La Matanza">La Matanza</option>
+            <option value="La Plata">La Plata</option>
+            <option value="Lanús">Lanús</option>
+            <option value="Las Cañitas">Las Cañitas</option>
+            <option value="Liniers">Liniers</option>
+            <option value="Lomas de Zamora">Lomas de Zamora</option>
+            <option value="Malvinas Argentinas">Malvinas Argentinas</option>
+            <option value="Marcos Paz">Marcos Paz</option>
+            <option value="Mataderos">Mataderos</option>
+            <option value="Merlo">Merlo</option>
+            <option value="Monserrat">Monserrat</option>
+            <option value="Monte Castro">Monte Castro</option>
+            <option value="Moreno">Moreno</option>
+            <option value="Morón">Morón</option>
+            <option value="Nuñez">Nuñez</option>
+            <option value="Once">Once</option>
+            <option value="Palermo">Palermo</option>
+            <option value="Parque Avellaneda">Parque Avellaneda</option>
+            <option value="Parque Centenario">Parque Centenario</option>
+            <option value="Parque Chacabuco">Parque Chacabuco</option>
+            <option value="Parque Chas">Parque Chas</option>
+            <option value="Parque Patricios">Parque Patricios</option>
+            <option value="Paternal">Paternal</option>
+            <option value="Pilar">Pilar</option>
+            <option value="Pompeya">Pompeya</option>
+            <option value="Presidente Perón">Presidente Perón</option>
+            <option value="Puerto Madero">Puerto Madero</option>
+            <option value="Quilmes">Quilmes</option>
+            <option value="Recoleta">Recoleta</option>
+            <option value="Retiro">Retiro</option>
+            <option value="Saavedra">Saavedra</option>
+            <option value="San Cristobal">San Cristobal</option>
+            <option value="San Fernando">San Fernando</option>
+            <option value="San Isidro">San Isidro</option>
+            <option value="San Miguel">San Miguel</option>
+            <option value="San Nicolás">San Nicolás</option>
+            <option value="San Telmo">San Telmo</option>
+            <option value="San Vicente">San Vicente</option>
+            <option value="Tigre">Tigre</option>
+            <option value="Tres de Febrero">Tres de Febrero</option>
+            <option value="Tribunales">Tribunales</option>
+            <option value="Velez Sarsfield">Velez Sarsfield</option>
+            <option value="Versalles">Versalles</option>
+            <option value="Vicente López">Vicente López</option>
+            <option value="Villa Crespo">Villa Crespo</option>
+            <option value="Villa Devoto">Villa Devoto</option>
+            <option value="Villa General Mitre">Villa General Mitre</option>
+            <option value="Villa Lugano">Villa Lugano</option>
+            <option value="Villa Luro">Villa Luro</option>
+            <option value="Villa Ortuzar">Villa Ortuzar</option>
+            <option value="Villa Pueyrredón">Villa Pueyrredón</option>
+            <option value="Villa Real">Villa Real</option>
+            <option value="Villa Riachuelo">Villa Riachuelo</option>
+            <option value="Villa Santa Rita">Villa Santa Rita</option>
+            <option value="Villa Soldati">Villa Soldati</option>
+            <option value="Villa Urquiza">Villa Urquiza</option>
+            <option value="Villa del Parque">Villa del Parque</option>
+          </select></p>
+          
+      
+      <h3>3. Tamaño:<span class="required">*</span></h3>
+        <p>Superficie en m2:<span class="required">*</span><br>
+        <input type="text" name="cubierta" placeholder="Cubierta" required/></input>
+        <input type="text" name="descubierta" placeholder="Descubierta" required/></input>
+        <br>
+          <select name="ambientes" required>
+          <option value="ambientes">Ambientes</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          </select>
+          <select name="baños" required>
+            <option value="baños">Baños</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+          </select>
+        </p>
+
+      <h3>4. Amenities:</h3>
+      <div class="question">
+        <div class="question-answer checkbox-item">
+          <div><input type="checkbox" value="none" id="check_1"/><label for="check_1" class="check"><span>Jardín</span></label>
+          </div>
+          <div><input type="checkbox" value="none" id="check_2"/><label for="check_2" class="check"><span>Cochera</span></label>
+          </div>
+          <div><input type="checkbox" value="none" id="check_3"/><label for="check_3" class="check"><span>Parrilla</span></label>
+          </div>
+          <div><input type="checkbox" value="none" id="check_4"/><label for="check_4" class="check"><span>Pileta</span></label>
+          </div>
+          <div><input type="checkbox" value="none" id="check_5"/><label for="check_5" class="check"><span>Terraza</span></label>
+          </div>
+          <div><input type="checkbox" value="none" id="check_6"/><label for="check_6" class="check"><span>Lavadero</span></label>
+          </div>
+        </div>
+      </div>
+          
+            
+        
+    <button type="submit">Obtener Tasación</button>
+  </form>
+
+      
+        
+      
+  
+
+
+<footer>
+<br>  
+Tasador web de propiedades en Buenos Aires.<br> Proyecto desarrollado
+a partir de un modelo XGBoost entrenado con datos de la inmobiliaria Properati.
+<br> Algunas visualizaciones del proyecto: <a href="/map_heat">Data Vis!</a> | <a href="https://github.com/msavransky/properati">Repositorio</a>
+<br><hr>
+Por <a href="https://msavransky.github.io/msavransky/">Martín Savransky</a>, 2021.
+<br>
+¡MarSav map's Tasador web es de mí confianza! ¡Yo lo recomiendo!
+</footer>
+
+</html>

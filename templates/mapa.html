@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:center;top:0;bottom:0;right:10;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    <title>MarSav map's plano</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/mapa.css')}}">
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_b0a24e37a6744046ba20bcc5d80a1eee {
+                    position: center;
+                    width: 80.0%;
+                    height: 80.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                    margin-left: 10%;
+                }
+            </style>
+        
+</head>
+<div class="banner"></div>  
+<header><h1>Tasador de Propiedades</h1>    
+<h3>Propiedad: {{adress}}</h3>
+<h2>Valor: US${{predict_precio}}</h2>
+</header> 
+<body>    
+    
+            <div class="folium-map" id="map_b0a24e37a6744046ba20bcc5d80a1eee" ></div>
+        
+</body>
+<footer>
+    <br>  
+    Tasador web de propiedades en Buenos Aires.<br> Proyecto desarrollado
+    a partir de un modelo XGBoost entrenado con datos de la inmobiliaria Properati.
+    <br> Algunas visualizaciones del proyecto: <a href="/map_heat">Data Vis!</a> | <a href="https://github.com/msavransky/properati">Repositorio</a>
+    <br><hr>
+    Por <a href="https://msavransky.github.io/msavransky/">Martín Savransky</a>, 2021.
+    <br>
+    ¡MarSav map's Tasador web es de mí confianza! ¡Yo lo recomiendo!
+    </footer>
+<script>    
+    
+            var map_b0a24e37a6744046ba20bcc5d80a1eee = L.map(
+                "map_b0a24e37a6744046ba20bcc5d80a1eee",
+                {
+                    center: [{{ adress_lat|safe }}, {{ adress_lon|safe }}],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 16,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_11e6367fcffc4048819f1dde8e66b5c6 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_b0a24e37a6744046ba20bcc5d80a1eee);
+        
+    
+            var marker_e1e236dd6da34557b28c19e5e574d9af = L.marker(
+                [{{ adress_lat|safe }}, {{ adress_lon|safe }}],
+                {}
+            ).addTo(map_b0a24e37a6744046ba20bcc5d80a1eee);
+        
+    
+            var icon_54ecaf5c6db546f6a6da6ddbe82e68c2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_e1e236dd6da34557b28c19e5e574d9af.setIcon(icon_54ecaf5c6db546f6a6da6ddbe82e68c2);
+        
+    
+        var popup_6fafa5939fc4428da8366dd28405436f = L.popup({"maxWidth": "100%"});
+
+        
+            var html_6059d11fec0e423e87e525d8014ec49f = $(`<div id="html_6059d11fec0e423e87e525d8014ec49f" style="width: 100.0%; height: 100.0%;">Propiedad: {{ adress|safe }} Valuada en: US$ {{ predict_precio|safe }}</div>`)[0];
+            popup_6fafa5939fc4428da8366dd28405436f.setContent(html_6059d11fec0e423e87e525d8014ec49f);
+        
+
+        marker_e1e236dd6da34557b28c19e5e574d9af.bindPopup(popup_6fafa5939fc4428da8366dd28405436f)
+        ;
+
+        
+    
+</script>

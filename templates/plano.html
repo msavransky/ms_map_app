@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>MarSav map's plano</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/index.css')}}">
+</head>
+
+
+<div class="banner"></div>  
+<header><h1>Tasador de Propiedades</h1>    
+<h4>Propiedad: {{adress}}</h4>
+<h4>Valor: US${{predict_precio}}</h4> 
+</header> 
+{% block body %}{% include "mapa.html" %}{% endblock %}
+<footer>
+<br>  
+Tasador web de propiedades en Buenos Aires.<br><a href="https://github.com/msavransky/properati">Proyecto</a> desarrollado
+a partir de un modelo XGBoost entrenado con datos de la inmobiliaria Properati.
+<br><hr>
+Por <a href="https://msavransky.github.io/msavransky/">Martín Savransky</a>, 2021.
+<br>
+¡MarSav map's Tasador web es de mí confianza! ¡Yo lo recomiendo!
+</footer>
+</html>
+

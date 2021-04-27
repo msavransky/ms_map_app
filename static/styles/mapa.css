@@ -1,0 +1,68 @@
+
+      
+      h1 {
+      position: relative;
+      font-size: 40px;
+      color: rgb(16, 16, 39);
+      z-index: 2;
+      height: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;   
+      margin: 30px 0;
+      }
+      h2 {
+      color: rgb(126, 5, 5);      
+      margin: 5% 0;
+      justify-content: center;
+      align-items: center;
+      text-align: center; 
+      }
+      h3 {
+      display: flex;      
+      color: rgb(16, 16, 39);      
+      margin: 5% 0;
+      justify-content: center;
+      align-items: center;
+      text-align: center; 
+      }
+      h4 {
+      color: rgb(16, 16, 39);      
+      margin: 5% 0;
+      justify-content: center;
+      align-items: center;
+      text-align: center; 
+      }
+      
+      .banner {
+      position: relative;
+      height: 210px;
+      background-image: url("https://storage.googleapis.com/kaggle-competitions/kaggle/5407/media/housesbanner.png");  
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      }
+      .banner::after {
+      content: "";
+      background-color: rgba(255, 255, 255, 0.10); 
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      }
+      .imagenes {
+      position: center;
+      width: 80.0%;
+      height: 80.0%;
+      left: 0.0%;
+      top: 0.0%;
+      margin-left: 10%}
+
+
+
+
+
+
+ 
