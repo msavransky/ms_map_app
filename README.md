@@ -48,6 +48,5 @@ Una de las ventajas de utilizar pythonanywhere es que gracias a las “[batterie
 - ‘templates’ contiene los archivos .html de la app
 - ‘static’ contiene los archivos .css y las imágenes
 
-Finalmente dejamos la app implementada y el repositorio en github: 
+## **Link a la web app:**
 [app](https://marsavtasador.pythonanywhere.com/)
-[repo](https://github.com/msavransky/ms_map_app)
