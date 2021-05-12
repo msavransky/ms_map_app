@@ -35,6 +35,7 @@ En el form inicial se agrupan los datos a completar por el usuario en 4 categor�
 2. Ubicación: Calle, numeración, barrio y región.
 3. Tamaño: Metros cuadrados cubiertos y descubiertos, cantidad de ambientes y cantidad de baños.
 4. Amenities.
+
 Con los datos provistos por el usuario se ejecuta la consulta al modelo para la tasación (predicción del precio en el modelo previamente entrenado y descargado). Al ejecutar la tasación se muestra al usuario la dirección provista, el valor de la propiedad (predicción) y la ubicación en un mapa.
 
 ## **Comentarios:**
@@ -48,5 +49,7 @@ Una de las ventajas de utilizar pythonanywhere es que gracias a las “[batterie
 - ‘templates’ contiene los archivos .html de la app
 - ‘static’ contiene los archivos .css y las imágenes
 
-## **Link a la web app:**
-[app](https://marsavtasador.pythonanywhere.com/)
+## **Links**
+[Web app deployed](https://marsavtasador.pythonanywhere.com/)
+[Notebooks Properati](https://github.com/msavransky/properati)
+
