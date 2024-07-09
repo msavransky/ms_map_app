@@ -84,7 +84,7 @@ def my_form_post():
         adress = str(calle) + ' ' + str(altura) + ', ' + str(barrio) + ', ' + str(region) + ', ' + 'Argentina'
         processed_adress = adress.lower()
     
-        url = 'http://nominatim.openstreetmap.org/search/' + urllib.parse.quote(processed_adress) +'?format=json'
+        url = 'https://nominatim.openstreetmap.org/search.php?q=' + urllib.parse.quote(processed_adress) +'&format=json'
         response = requests.get(url, verify=False).json()
     
         adress_lat = float(response[0]["lat"])
